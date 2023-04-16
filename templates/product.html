@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .card{
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            margin-top: 5px;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    {% for product in products %}
+    <form action="/product" method="post">
+    {% for i in products %}
     <div class="card">
-        <span>{{ product.names }}</span>
-        <span>{{ product.structure }}</span>
-        <span>{{ product.prices }}</span>
+        <h1>{{ i.names_breakfast  }}</h1>
     </div>
     {% endfor %}
+</form>
 </body>
 </html>
