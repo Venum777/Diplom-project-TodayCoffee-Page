@@ -15,10 +15,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/product" method="post">
+    <form action="/products" method="post">
     {% for i in products %}
     <div class="card">
-        <h1>{{ i.names_breakfast  }}</h1>
+        <h1>{{ i }}</h1>
     </div>
     {% endfor %}
 </form>

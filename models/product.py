@@ -1,54 +1,27 @@
+import flask
 import requests
 from bs4 import BeautifulSoup
 from lxml import etree as et
 
 
-# URL = 'https://glovoapp.com/kz/ru/karaganda/today-kgf-kgf/'
-
-# class Product:
-
 URL = 'https://karaganda.emenu.delivery/restoran/today_cafe_krg/menu/29951'
 
 class Product:
-    response = requests.get(URL)
-    soup = BeautifulSoup(response.text, "lxml-xml")
-    names = soup.find_all('div', class_='item-title')
-    names_breakfast: list[str] = []
+    @staticmethod
+    def get_products():
+        response = requests.get(URL)
+        soup = BeautifulSoup(response.text, "lxml")
+        names = soup.find_all('div', class_='item-title')
+        names_breakfast: list[str] = []
 
-    for name in names:
-        names_breakfast.append(name.text.strip())
+        for name in names:
+            names_breakfast.append(name.text.strip())
+        
+        return flask.render_template(
+            template_name_or_list='product.html',
+            products = names_breakfast
+        )
 
-
-# class Product:
-#     names = soup.find_all('div', class_='product-row__name')
-#     structure = soup.find_all('span', class_='product-row__info__description')
-#     prices = soup.find_all(
-#         'div', 
-#         class_='product-price product-row__price layout-vertical-tablet'
-#     )
-
-
-#     print(names.text.strip())
-    # names: list[str] = []
-    # structure: list[str] = []
-    # prices: list[str] = []
-
-    # for name in names:
-    #     names.append(name.text.strip())
-    
-    # for struct in structure:
-    #     names.append(struct.text.strip())
-
-    # for price in prices:
-    #     names.append(price.text.strip())
-
-
-    # for i in range(len(structure)):
-    #     price(f'''
-    #     name: {names[i]}
-    #     structure: {structure[i]}
-    #     price: {prices[i]}
-    #     ''')
 
 
 
