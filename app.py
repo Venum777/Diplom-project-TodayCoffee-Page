@@ -15,10 +15,13 @@ def get_products():
     response = requests.get(URL)
     soup = BeautifulSoup(response.text, "lxml")
     list_breakfast: list = soup.find_all('div', class_='list-product-item')
+    img: list = soup.find_all('div', class_='square lazy')
 
     list_names_breakfast: list[str] = []
     list_structure_breakfast: list[str] = []
     list_prices_breakfast: list[str] = []
+    image: list[str] = []
+
 
     for tag1 in list_breakfast:
         names_breakfast = (tag1.find('div', class_='item-title').text)
@@ -32,6 +35,12 @@ def get_products():
         prices_breakfast = (tag3.find('span', class_='price').text)
         list_prices_breakfast.append(prices_breakfast)
 
+    for tag4 in img:
+        img_breakfast = (tag4.find('img'))
+        image.append(img_breakfast["src"])
+
+    
+
     product = Product(
         name=list_names_breakfast,
         structure=list_structure_breakfast,
@@ -41,7 +50,8 @@ def get_products():
         
     return flask.render_template(
         template_name_or_list="product.html",
-        products=products
+        products=products,
+        image=image
     )
 
 

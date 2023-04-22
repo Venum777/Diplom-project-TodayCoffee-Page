@@ -12,6 +12,7 @@
         <h1>Завтраки</h1>
         {% for i in range(19) %}
             <div class="card1">
+                <img src="{{ image[i] }}" alt="image error" width="300px" height="200px">
                 {% for p in products %}
                     <h1>{{ p.name[i] }}</h1>
                     <h3>{{ p.structure[i] }}</h3>
