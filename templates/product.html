@@ -9,11 +9,14 @@
 </head>
 <body>
     <form action="/products" method="post">
-        {% for p in products %}
+        <h1>Завтраки</h1>
+        {% for i in range(19) %}
             <div class="card1">
-                <h1>{{ p.name }}</h1>
-                <h3>{{ p.structure }}</h3>
-                <h5>{{ p.price }}</h5>
+                {% for p in products %}
+                    <h1>{{ p.name[i] }}</h1>
+                    <h3>{{ p.structure[i] }}</h3>
+                    <h5>{{ p.price[i] }} ₸</h5>
+                {% endfor %}
             </div>
         {% endfor %}
     </form>
