@@ -72,7 +72,6 @@ header{
 }
 
 .menu-bar {
-    
     border-radius: 25px;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -187,7 +186,7 @@ a.button1{
     --color-1: #ACCFCB;
     --color-2: #E4A9A8;
     --color-3: #ACCFCB;
-}
+}    
   
 .title-word-4 {
     --color-1: #3D8DAE;

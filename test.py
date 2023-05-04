@@ -1,20 +1,26 @@
-import requests
-from bs4 import BeautifulSoup
+URL_BREAKFAST = 'https://karaganda.emenu.delivery/restoran/today_cafe_krg/menu/'
+pages = [
+        29951,
+        39382,
+        39383,
+        29948,
+        29949,
+        29943,
+        34409,
+        29945,
+        41786,
+        29944,
+        29941,
+        38938
+]
+
+for page in pages:
+    all_link = URL_BREAKFAST + str(page)
 
 
-URL = 'https://karaganda.emenu.delivery/restoran/today_cafe_krg/menu/29951'
+# base_link = "http://example.com/"
+# numbers = [1, 2, 3]
 
-
-response = requests.get(URL)
-soup = BeautifulSoup(response.text, "lxml")
-
-img: list = soup.find_all('div', class_='square lazy')
-
-image: list = []
-
-for tag4 in img:
-    img_breakfast = (tag4.find('img'))
-    image.append(img_breakfast)
-
-print(image)
-
+# for number in numbers:
+#     my_link = base_link + str(number)
+#     print(my_link)

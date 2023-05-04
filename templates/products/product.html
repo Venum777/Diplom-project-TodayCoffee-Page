@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/CSS/products.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parrent">
+        <header>
+            <div id="blockinfo">
+                <ul class="menu-bar">
+                    <a href="../index.html" style="text-decoration: none;"><li>ГЛАВНАЯ</li></a>
+                    <a href="../products/product.html" style="text-decoration: none;"><li>МЕНЮ</li></a>
+                    <a href="../menu-bar/info.html" style="text-decoration: none;"><li>О КОМПАНИИ</li></a>
+                    <a href="../menu-bar/stocks.html" style="text-decoration: none;"><li>АКЦИИ</li></a>
+                    <a href="../menu-bar/contacts.html" style="text-decoration: none;"><li>КОНТАКТЫ</li></a>
+                  </ul>
+            </div>
+        </header>
+        <div id="bodyblock">
+            <form action="/products" method="post"></form>
+            <div id="block1">
+                <div id="products">
+                    <ul class="menu-bar" style="display: flex; flex-direction: column; justify-content: flex-start; position: fixed;">
+                        <a href="{{ url_for('get_products_breakfast') }}" style="text-decoration: none;"><li>Завтраки</li></a>
+                        <!-- <a href="breakfast.html".html"></a><li>Завтраки</li>
+                        <a href="pizza.html"></a><li>Пицца</li>
+                        <a href="burger.html"></a><li>Бургеры</li>
+                        <a href="fish_dish.html"></a><li>Первые блюда</li>
+                        <a href="pasts.html"></a><li>Пасты</li>
+                        <a href="salad.html"></a><li>Салаты</li>
+                        <a href="waffles_and_cheesecakes.html"></a><li>Вафли и сырники</li>
+                        <a href="snacks.html"></a><li>Закуски</li>
+                        <a href="bread.html"></a><li>Хлеб</li>
+                        <a href="desserts.html"></a><li>Десерты</li>
+                        <a href="cold_drinks.html"></a><li>Холодные напитки</li>
+                        <a href="coffee.html"></a><li>Кофе</li> -->
+                    </ul>
+                </div>
+            </div>
+            <div id="block2">
+                <h1 style="align-self: center;">Меню: </h1>
+                {% for i in range(19) %}
+                    <div class="card1">
+                        <img src="{{ image[i] }}" alt="image error" width="300px" height="200px">
+                        {% for p in products %}
+                            <h1>{{ p.name[i] }}</h1>
+                            <h3>{{ p.structure[i] }}</h3>
+                            <h5>{{ p.price[i] }} ₸</h5>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="block3">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

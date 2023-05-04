@@ -1,58 +1,131 @@
 import flask
-from models.product import Product
-import requests
-from bs4 import BeautifulSoup
+from flask import url_for
+#-----------------------------------------------------
+# IMPORT ALL PRODUCTS
+from models.pars.breakfast import *
+#-----------------------------------------------------
 
-
-URL = 'https://karaganda.emenu.delivery/restoran/today_cafe_krg/menu/29951'
 
 app = flask.Flask(__name__)
-products: list[Product] = []
 
 
 @app.route("/products", methods=['GET','POST'])
 def get_products():
-    response = requests.get(URL)
-    soup = BeautifulSoup(response.text, "lxml")
-    list_breakfast: list = soup.find_all('div', class_='list-product-item')
-    img: list = soup.find_all('div', class_='square lazy')
 
-    list_names_breakfast: list[str] = []
-    list_structure_breakfast: list[str] = []
-    list_prices_breakfast: list[str] = []
-    image: list[str] = []
-
-
-    for tag1 in list_breakfast:
-        names_breakfast = (tag1.find('div', class_='item-title').text)
-        list_names_breakfast.append(names_breakfast)
-
-    for tag2 in list_breakfast:
-        structure_breakfast = (tag2.find('p', class_='hidden-lg').text.replace("\n",""))
-        list_structure_breakfast.append(structure_breakfast)
-
-    for tag3 in list_breakfast:
-        prices_breakfast = (tag3.find('span', class_='price').text)
-        list_prices_breakfast.append(prices_breakfast)
-
-    for tag4 in img:
-        img_breakfast = (tag4.find('img'))
-        image.append(img_breakfast["src"])
-
-    
-
-    product = Product(
-        name=list_names_breakfast,
-        structure=list_structure_breakfast,
-        price=list_prices_breakfast
-    )
-    products.append(product)
-        
     return flask.render_template(
-        template_name_or_list="product.html",
-        products=products,
-        image=image
+        template_name_or_list="products/product.html",
+        list_product_breakfast=list_product_breakfast,
+        image=list_image_breakfast
     )
+
+@app.route("/breakfast", methods=['GET','POST'])
+def get_products_breakfast():
+
+    return flask.render_template(
+        template_name_or_list="products/breakfast.html",
+        list_product_breakfast=list_product_breakfast,
+        image=list_image_breakfast
+    )
+
+@app.route("/bread", methods=['GET','POST'])
+def get_products_bread():
+
+    return flask.render_template(
+        template_name_or_list="products/bread.html",
+        list_product_bread=list_product_bread,
+        image=list_image_bread
+    )
+
+@app.route("/burger", methods=['GET','POST'])
+def get_products_burger():
+
+    return flask.render_template(
+        template_name_or_list="products/burger.html",
+        list_product_burger=list_product_burger,
+        image=list_image_burger
+    )
+
+@app.route("/coffee", methods=['GET','POST'])
+def get_products_coffee():
+
+    return flask.render_template(
+        template_name_or_list="products/coffee.html",
+        list_product_coffee=list_product_coffee,
+        image=list_image_coffee
+    )
+
+@app.route("/coldDrinks", methods=['GET','POST'])
+def get_products_cold_drinks():
+
+    return flask.render_template(
+        template_name_or_list="products/cold_drinks.html",
+        list_product_coffee=list_product_cold_drinks,
+        image=list_image_cold_drinks
+    )
+
+@app.route("/deserts", methods=['GET','POST'])
+def get_products_deserts():
+
+    return flask.render_template(
+        template_name_or_list="products/desserts.html",
+        list_product_coffee=list_product_deserts,
+        image=list_image_deserts
+    )
+
+@app.route("/firstDish", methods=['GET','POST'])
+def get_products_first_dish():
+
+    return flask.render_template(
+        template_name_or_list="products/first_dish.html",
+        list_product_coffee=list_product_first_dish,
+        image=list_image_first_dish
+    )
+
+@app.route("/pasts", methods=['GET','POST'])
+def get_products_pasts():
+
+    return flask.render_template(
+        template_name_or_list="products/pasts.html",
+        list_product_coffee=list_product_pasts,
+        image=list_image_pasts
+    )
+
+@app.route("/pizza", methods=['GET','POST'])
+def get_products_pizza():
+
+    return flask.render_template(
+        template_name_or_list="products/pizza.html",
+        list_product_coffee=list_product_pizza,
+        image=list_image_pizza
+    )
+
+@app.route("/salad", methods=['GET','POST'])
+def get_products_salad():
+
+    return flask.render_template(
+        template_name_or_list="products/salad.html",
+        list_product_coffee=list_product_salad,
+        image=list_image_salad
+    )
+
+@app.route("/snacks", methods=['GET','POST'])
+def get_products_snacks():
+
+    return flask.render_template(
+        template_name_or_list="products/snacks.html",
+        list_product_coffee=list_product_snacks,
+        image=list_image_snacks
+    )
+
+@app.route("/wafflesChesecakes", methods=['GET','POST'])
+def get_products_w_and_c():
+
+    return flask.render_template(
+        template_name_or_list="products/waffles_and_cheesecakes.html",
+        list_product_coffee=list_product_w_and_c,
+        image=list_image_w_and_c
+    )
+
 
 
 if __name__ == '__main__':
