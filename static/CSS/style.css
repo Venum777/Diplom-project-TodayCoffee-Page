@@ -48,27 +48,11 @@ header{
 }
 
 #block2{
-    width: 40%;
+    width: 20%;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content:space-around;
-}
-
-#auth{
-    width: 40%;
-    height: 80%;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-}
-
-#registr{
-    width: 40%;
-    height: 80%;
-    align-self: center;
-    display: flex;
-    justify-content: center;
 }
 
 .menu-bar {
@@ -81,8 +65,8 @@ header{
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     align-items: center;
-    padding: 0 10px;
-    margin: 8px 0 0 0;
+    padding: 0 30px;
+    margin: 0px 0 0 0;
 }
 
 .menu-bar li {
@@ -90,7 +74,7 @@ header{
     color: white;
     font-family: sans-serif;
     font-weight: bold;
-    padding: 12px 16px;
+    padding: 23px 16px;
     margin: 0 8px;
     position: relative;
     cursor: pointer;
@@ -102,7 +86,7 @@ header{
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 80%;
     z-index: -1;
     transition: 0.2s;
     border-radius: 25px;
@@ -113,15 +97,15 @@ header{
 .menu-bar li:hover::before {
     background: linear-gradient(to bottom, #e8edec, #d2d1d3);
     box-shadow: 0px 3px 20px 0px black;
-    transform: scale(1.2);
+    transform: scale(1);
 }
 
 #blockinfo{
     width: 100%;
     height: 100%;
-    background-color:black;
+    /* background-color:black; */
     align-self: center;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     border: 3px solid white;
     border-radius: 20px;
     display: flex;
@@ -217,4 +201,39 @@ a.button1{
     font-weight: 800;
     font-size: 60px;
     text-transform: uppercase;
+}
+
+.btn{
+    width: 80%;
+    height: 100%;
+    position: relative;
+    display: block;
+    color: white;
+    font-size: 14px;
+    font-family: "montserrat";
+    text-decoration: none;
+    border: 2px solid #ff7675;
+    padding: 14px 60px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 1s all ease;
+}
+.btn::before{
+    background: #ff7675;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    transition: all 0.6s ease;
+}
+  
+.btn1::before{
+    width: 0%;
+    height: 100%;
+}
+  
+.btn1:hover::before{
+    width: 100%;
 }

@@ -12,11 +12,11 @@
         <header>
             <div id="blockinfo">
                 <ul class="menu-bar">
-                    <a href="../index.html" style="text-decoration: none;"><li>ГЛАВНАЯ</li></a>
-                    <a href="../products/product.html" style="text-decoration: none;"><li>МЕНЮ</li></a>
-                    <a href="../menu-bar/info.html" style="text-decoration: none;"><li>О КОМПАНИИ</li></a>
-                    <a href="../menu-bar/stocks.html" style="text-decoration: none;"><li>АКЦИИ</li></a>
-                    <a href="../menu-bar/contacts.html" style="text-decoration: none;"><li>КОНТАКТЫ</li></a>
+                    <a href="{{ url_for('main_page') }}" style="text-decoration: none;"><li>ГЛАВНАЯ</li></a>
+                    <a href="{{ url_for('get_products_breakfast') }}" style="text-decoration: none;"><li>МЕНЮ</li></a>
+                    <a href="{{ url_for('info_page') }}" style="text-decoration: none;"><li>О КОМПАНИИ</li></a>
+                    <a href="{{ url_for('review_page') }}" style="text-decoration: none;"><li>ОТЗЫВЫ</li></a>
+                    <a href="{{ url_for('contacts_page') }}" style="text-decoration: none;"><li>КОНТАКТЫ</li></a>
                   </ul>
             </div>
         </header>

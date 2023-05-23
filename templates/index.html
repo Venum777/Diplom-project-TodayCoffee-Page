@@ -13,25 +13,16 @@
         <div id="block1">
             <div id="blockinfo">
                 <ul class="menu-bar">
-                    <a href="index.html" style="text-decoration: none;"><li>ГЛАВНАЯ</li></a>
-                    <a href="products/product.html" style="text-decoration: none;"><li>МЕНЮ</li></a>
-                    <a href="menu-bar/info.html" style="text-decoration: none;"><li>О КОМПАНИИ</li></a>
-                    <a href="menu-bar/stocks.html" style="text-decoration: none;"><li>АКЦИИ</li></a>
-                    <a href="menu-bar/contacts.html" style="text-decoration: none;"><li>КОНТАКТЫ</li></a>
+                    <a href="{{ url_for('main_page') }}" style="text-decoration: none;"><li>ГЛАВНАЯ</li></a>
+                    <a href="{{ url_for('get_products_breakfast') }}" style="text-decoration: none;"><li>МЕНЮ</li></a>
+                    <a href="{{ url_for('info_page') }}" style="text-decoration: none;"><li>О КОМПАНИИ</li></a>
+                    <a href="{{ url_for('review_page') }}" style="text-decoration: none;"><li>ОТЗЫВЫ</li></a>
+                    <a href="{{ url_for('contacts_page') }}" style="text-decoration: none;"><li>КОНТАКТЫ</li></a>
                   </ul>
             </div>
         </div>
         <div id="block2">
-            <div id="auth">
-                <a href="#" class="button1">
-                    <p class="txt2">Войти</p>
-                </a>
-            </div>
-            <div id="registr">
-                <a href="#" class="button1">
-                    <p class="txt2">Зарегистрироваться</p>
-                </a>
-            </div>
+            <a href="{{ url_for('deauth') }}" class="btn btn1">Выйти из уч.записи</a>
         </div>
     </header>
     <div id="bodyblock">

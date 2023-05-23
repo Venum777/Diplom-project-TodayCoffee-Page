@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/CSS/reg_and_auth.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Страница регистрации</title>
+</head>
+<body>
+    <div id="parrent">
+        <h1 class="txt1">Регистрация</h1>
+        <form action="" id="reg_form">
+        <div class="block">
+            <input class="input" type="text" placeholder="Ведите логин:" id="login">
+        </div>
+        <div class="block">
+            <input class="input" type="password" placeholder="Ведите пароль:" id="password">
+        </div>
+        <div class="block">
+            <input class="input" type="password" placeholder="Повторите пароль:" id="rpassword">
+        </div>
+        <div class="block">
+            <input class="input" type="text" placeholder="Ведите Почту: " id="email">
+        </div>
+        <div class="block">
+            <button class="input" type="button" id="reg">Зарегистрироваться</button>
+        </div>
+    </form>
+        <div class="block">
+            <a href="/authorization" style="text-decoration: none; color: white;">У вас уже есть аккаунт?</a>
+        </div>
+    </div>
+    <script src="../static/js/Request.js"></script>
+    <script src="../static/js/reg.js"></script> 
+</body>
+</html>

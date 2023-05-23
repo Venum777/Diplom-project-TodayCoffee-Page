@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/CSS/review.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parrent">
+        <header>
+            <div id="blockinfo">
+                <ul class="menu-bar">
+                    <a href="{{ url_for('main_page') }}" style="text-decoration: none;"><li>ГЛАВНАЯ</li></a>
+                    <a href="{{ url_for('get_products_breakfast') }}" style="text-decoration: none;"><li>МЕНЮ</li></a>
+                    <a href="{{ url_for('info_page') }}" style="text-decoration: none;"><li>О КОМПАНИИ</li></a>
+                    <a href="{{ url_for('review_page') }}" style="text-decoration: none;"><li>ОТЗЫВЫ</li></a>
+                    <a href="{{ url_for('contacts_page') }}" style="text-decoration: none;"><li>КОНТАКТЫ</li></a>
+                  </ul>
+            </div>
+        </header>
+        <div id="bodyblock">
+            <form action="/reviews" method="post"></form>
+            <div id="block2">
+                <h1 style="align-self: center;">Отзывы пользователей: </h1>
+                {% for c in reviews %}
+                    <div class="card">
+                        <div class="img">
+                            <img src="https://emenu.delivery/img/noavatar.png" alt="image error" width="64px" height="64px">
+                        </div>
+                        <div class="name">
+                            <p>{{ c.name }}</p>
+                        </div>
+                        <div class="date">
+                            <p>{{ c.date.date() }}</p>
+                        </div>
+                        <div class="rate">
+                            <p>{{ c.rate }} &#9733;</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {% for i in range(20) %}
+                    <div class="card">
+                        {% for r in list_review %}
+                            <div class="img">
+                                <img src="{{ image[i] }}" alt="image error" width="64px" height="64px">
+                            </div>
+                            <div class="name">
+                                <p>{{ r.name[i] }}</p>
+                            </div>
+                            <div class="date">
+                                <p>{{ r.date[i] }}</p>
+                            </div>
+                            <div class="rate">
+                                <p>{{ r.rate[i] }} &#9733;</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

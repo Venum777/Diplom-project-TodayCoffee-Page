@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/CSS/products.css">
+    <link rel="stylesheet" href="../../static/CSS/products.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,11 +12,11 @@
         <header>
             <div id="blockinfo">
                 <ul class="menu-bar">
-                    <a href="index.html"></a><li>ГЛАВНАЯ</li>
-                    <a href="/templates/products/product.html"></a><li>МЕНЮ</li>
-                    <a href="/templates/menu-bar/info.html"></a><li>О КОМПАНИИ</li>
-                    <a href="/templates/menu-bar/stocks.html"></a><li>АКЦИИ</li>
-                    <a href="/templates/menu-bar/contacts.html"></a><li>КОНТАКТЫ</li>
+                    <a href="{{ url_for('main_page') }}" style="text-decoration: none;"><li>ГЛАВНАЯ</li></a>
+                    <a href="{{ url_for('get_products_breakfast') }}" style="text-decoration: none;"><li>МЕНЮ</li></a>
+                    <a href="{{ url_for('info_page') }}" style="text-decoration: none;"><li>О КОМПАНИИ</li></a>
+                    <a href="{{ url_for('review_page') }}" style="text-decoration: none;"><li>ОТЗЫВЫ</li></a>
+                    <a href="{{ url_for('contacts_page') }}" style="text-decoration: none;"><li>КОНТАКТЫ</li></a>
                   </ul>
             </div>
         </header>
@@ -25,27 +25,27 @@
             <div id="block1">
                 <div id="products">
                     <ul class="menu-bar" style="display: flex; flex-direction: column; justify-content: flex-start; position: fixed;">
-                        <a href="breakfast.html".html"></a><li>Завтраки</li>
-                        <a href="pizza.html"></a><li>Пицца</li>
-                        <a href="burger.html"></a><li>Бургеры</li>
-                        <a href="fish_dish.html"></a><li>Первые блюда</li>
-                        <a href="pasts.html"></a><li>Пасты</li>
-                        <a href="salad.html"></a><li>Салаты</li>
-                        <a href="waffles_and_cheesecakes.html"></a><li>Вафли и сырники</li>
-                        <a href="snacks.html"></a><li>Закуски</li>
-                        <a href="bread.html"></a><li>Хлеб</li>
-                        <a href="desserts.html"></a><li>Десерты</li>
-                        <a href="cold_drinks.html"></a><li>Холодные напитки</li>
-                        <a href="coffee.html"></a><li>Кофе</li>
+                        <a href="{{ url_for('get_products_breakfast') }}" style="text-decoration: none;"><li>Завтраки</li></a>
+                        <a href="{{ url_for('get_products_pizza') }}" style="text-decoration: none;"><li>Пицца</li></a>
+                        <a href="{{ url_for('get_products_burger') }}" style="text-decoration: none;"><li>Бургеры</li></a>
+                        <a href="{{ url_for('get_products_first_dish') }}" style="text-decoration: none;"><li>Первые блюда</li></a>
+                        <a href="{{ url_for('get_products_pasts') }}" style="text-decoration: none;"><li>Пасты</li></a>
+                        <a href="{{ url_for('get_products_salad') }}" style="text-decoration: none;"><li>Салаты</li></a>
+                        <a href="{{ url_for('get_products_w_and_c') }}" style="text-decoration: none;"><li>Вафли и сырники</li></a>
+                        <a href="{{ url_for('get_products_snacks') }}" style="text-decoration: none;"><li>Закуски</li></a>
+                        <a href="{{ url_for('get_products_bread') }}" style="text-decoration: none;"><li>Хлеб</li></a>
+                        <a href="{{ url_for('get_products_deserts') }}" style="text-decoration: none;"><li>Десерты</li></a>
+                        <a href="{{ url_for('get_products_cold_drinks') }}" style="text-decoration: none;"><li>Холодные напитки</li></a>
+                        <a href="{{ url_for('get_products_coffee') }}" style="text-decoration: none;"><li>Кофе</li></a>
                     </ul>
                 </div>
             </div>
             <div id="block2">
                 <h1 style="align-self: center;">Меню: </h1>
-                {% for i in range(19) %}
+                {% for i in range(3) %}
                     <div class="card1">
                         <img src="{{ image[i] }}" alt="image error" width="300px" height="200px">
-                        {% for p in products %}
+                        {% for p in list_product_burger %}
                             <h1>{{ p.name[i] }}</h1>
                             <h3>{{ p.structure[i] }}</h3>
                             <h5>{{ p.price[i] }} ₸</h5>
