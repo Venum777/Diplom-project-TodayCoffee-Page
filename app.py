@@ -225,6 +225,21 @@ with app.app_context():
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
+
+# ---------------------------------------------
+# Страница отзывы
+# ---------------------------------------------
+@app.route("/reviews", methods=["GET", "POST"])
+def review_page():
+    reviews = db.session.execute(db.select(Rev)).scalars()
+    return flask.render_template(
+        template_name_or_list="review/review.html",
+        reviews = reviews,
+        list_review = list_review,
+        image = list_img_review
+    )
+#-----------------------------------------------
+
 #-----------------------------------------------
 # Создаем отзыв
 #-----------------------------------------------
@@ -243,20 +258,6 @@ def write_review():
         except:
             return 'При добавлении отзыва произошла ошибка'
     return render_template("review/write_review.html")
-#-----------------------------------------------
-
-# ---------------------------------------------
-# Страница отзывы
-# ---------------------------------------------
-@app.route("/reviews", methods=["GET", "POST"])
-def review_page():
-    reviews = db.session.execute(db.select(Rev)).scalars()
-    return flask.render_template(
-        template_name_or_list="review/review.html",
-        reviews = reviews,
-        list_review = list_review,
-        image = list_img_review
-    )
 #-----------------------------------------------
 
 

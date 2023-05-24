@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/CSS/contacts.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div id="blockinfo">
+            <ul class="menu-bar">
+                <a href="{{ url_for('main_page') }}" style="text-decoration: none;"><li>ГЛАВНАЯ</li></a>
+                <a href="{{ url_for('get_products_breakfast') }}" style="text-decoration: none;"><li>МЕНЮ</li></a>
+                <a href="{{ url_for('info_page') }}" style="text-decoration: none;"><li>О КОМПАНИИ</li></a>
+                <a href="{{ url_for('review_page') }}" style="text-decoration: none;"><li>ОТЗЫВЫ</li></a>
+                <a href="{{ url_for('contacts_page') }}" style="text-decoration: none;"><li>КОНТАКТЫ</li></a>
+            </ul>
+        </div>
+    </header>
+    <div id="parrent">
+        <div id="block1">
+            <h1 style="margin-left: 200px; font-size: 50px; font-weight: bold;">Контакты</h1>
+        </div>
+        <div id="block2">
+            <div id="blocktop">
+                <h2 style="margin-left: 200px;">Горячая линия</h2>
+            </div>
+            <div id="blockbottom">
+                <div style="margin-left: 200px;" id="leftblock">
+                    <img style="width: 100%; height: 100%;" src="/static/img/icon/phone.png">
+                </div>
+                <div id="rightblock">
+                    <p style="margin-top: 10px; margin-left: 10px;">8 (775) 101 4895</p>
+                </div>
+            </div>
+        </div>
+        <div id="block3">
+            <div class="block4">
+                <div style="margin-left: 200px;" class="ic">
+                    <img src="/static/img/icon/instagram.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="txt">
+                    <a class="ss" href="https://www.instagram.com/today.coffeehouse/" target="_blank">Мы в Instagram</a>
+                </div>
+            </div>
+
+            <div class="block4">
+                <div style="margin-left: 200px;" class="ic">
+                    <img src="/static/img/icon/facebook.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="txt">
+                    <a class="ss" href="https://www.facebook.com/today.coffee.krg/" target="_blank">Мы в Facebook</a>
+                </div>
+            </div>
+
+            <div class="block4">
+                <div style="margin-left: 200px;" class="ic">
+                    <img src="/static/img/icon/tiktok.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="txt">
+                    <a class="ss" href="https://www.tiktok.com/@today__breakfast?_d=secCgYIASAHKAESPgo85qh%2BlMJMyLG0VLSTuuzmX5Jp2s6zDP1jLlOK2RTp0j67wpfPslBPVeFAj1bQbYyYb8HpKYBx3shCWXzCGgA%3D&_r=1&language=ru&sec_uid=MS4wLjABAAAAIIn-f2a_MG2-saFQaKQIRUdDHxtePDTZiiZqBDHn6tvWqV51fYpgM011rdYTDLI2&sec_user_id=MS4wLjABAAAAIIn-f2a_MG2-saFQaKQIRUdDHxtePDTZiiZqBDHn6tvWqV51fYpgM011rdYTDLI2&share_app_name=musically&share_author_id=7205296767586485254&share_link_id=8afa44e5-cca4-44df-9b56-167f01a96b7f&source=h5_m&timestamp=1679563174&u_code=e6i3dlbbh5c16a&user_id=7205296767586485254&utm_campaign=client_share&utm_medium=android&utm_source=more" target="_blank">Мы в TikTok</a>
+                </div>
+            </div>
+
+            <div class="block4">
+                <div style="margin-left: 200px;" class="ic">
+                    <img src="/static/img/icon/2gis.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="txt">
+                    <a class="ss" href="https://2gis.kz/karaganda/firm/70000001020523927" target="_blank">Мы в 2GIS</a>
+                </div>
+            </div>
+
+            <div class="block4">
+                <div style="margin-left: 200px;" class="ic">
+                    <img src="/static/img/icon/delivery.png" style="width: 100%; height: 100%;">
+                </div>
+                <div class="txt">
+                    <a class="ss" href="https://karaganda.emenu.delivery/restoran/today_cafe_krg/menu/29951" target="_blank">Заказать доставку</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

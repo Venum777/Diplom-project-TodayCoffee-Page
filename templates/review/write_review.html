@@ -10,8 +10,9 @@
     <form action="" method="post">
         <input type="text" name="name" id="name" placeholder="Твоё имя:">
         <!-- <textarea name="description" id="description" placeholder="Описание:"></textarea> -->
-        <input type="number" name="rate" id="rate" placeholder="Оценка:">
+        <input style="width: 100px;" type="number"  min="0" max="5" name="rate" id="rate" placeholder="Оценка:">
         <input type="submit">
     </form>
+    <a href="{{ url_for('review_page') }}"><button style="margin-top: 30px;">Назад</button></a>
 </body>
 </html>
