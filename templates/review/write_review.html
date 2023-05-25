@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/static/CSS/write.css">
+    <title>Оставить отзыв</title>
 </head>
 <body>
-    <form action="" method="post">
-        <input type="text" name="name" id="name" placeholder="Твоё имя:">
-        <!-- <textarea name="description" id="description" placeholder="Описание:"></textarea> -->
-        <input style="width: 100px;" type="number"  min="0" max="5" name="rate" id="rate" placeholder="Оценка:">
-        <input type="submit">
-    </form>
-    <a href="{{ url_for('review_page') }}"><button style="margin-top: 30px;">Назад</button></a>
+    <div id="parrent">
+        <form action="" method="post">
+        <div id="block1">
+                <input type="text" name="name" id="name" placeholder="Твоё имя:">
+                <input style="width: 100px;" type="number"  min="0" max="5" name="rate" id="rate" placeholder="Оценка:">
+                <textarea name="description" id="description" placeholder="Описание:"></textarea>
+                <input type="submit" style="width: 50%; height: 50px; background-color: green; align-self: center;">
+                <a href="{{ url_for('review_page') }}"><button style="margin-top: 30px;">Назад</button></a>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

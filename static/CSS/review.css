@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/revew_img.jpg);
+    background-image: url(../img/img4.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -116,21 +116,29 @@ header{
 }
 
 .name{
-    width: 30%;
+    width: 10%;
     height: 100%;
     margin-left: 10px;
     hyphens: manual;
     align-self: center;
 }
 
+.description{
+    width: 60%;
+    height: 100%;
+    align-self: center;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
 .date{
-    width: 30%;
+    width: 20%;
     height: 100%;
     align-self: center;
 }
 
 .rate{
-    width: 30%;
+    width: 10%;
     height: 100%;
     align-self: center;
 }

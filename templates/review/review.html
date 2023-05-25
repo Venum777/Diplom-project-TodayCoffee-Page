@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../static/CSS/review.css">
-    <title>Document</title>
+    <title>Отзывы</title>
 </head>
 <body>
     <div id="parrent">
@@ -32,6 +32,9 @@
                         <div class="name">
                             <p>{{ c.name }}</p>
                         </div>
+                        <div class="description">
+                            <p style="margin-left: 40px;">{{ c.description }}</p>
+                        </div>
                         <div class="date">
                             <p>{{ c.date.date() }}</p>
                         </div>
@@ -50,6 +53,7 @@
                             <div class="name">
                                 <p>{{ r.name[i] }}</p>
                             </div>
+                            <div class="description"></div>
                             <div class="date">
                                 <p>{{ r.date[i] }}</p>
                             </div>
@@ -60,10 +64,10 @@
                     </div>
                 {% endfor %}
             </div>
-            <div id="block3">
-                <div class="wrap">
+            <div id="block3">        
+                <div class="wrap" style="position: fixed;">
                     <a href="{{ url_for('write_review') }}"><button class="button">Оставить отзыв</button></a>
-                  </div>
+                </div>
             </div>
         </div>
     </div>

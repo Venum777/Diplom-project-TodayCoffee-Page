@@ -1,5 +1,8 @@
 from flask import Flask, redirect, url_for, render_template, request, session
 import flask
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+from services.interface import *
 from random import choices
 import string
 
@@ -7,13 +10,8 @@ import string
 # IMPORT ALL PRODUCTS
 from models.pars.products import *
 from services.interface import *
-#-----------------------------------------------------
-
 from models.pars.review import *
-from flask import Flask, render_template, request, redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-from services.interface import *
+#-----------------------------------------------------
 
 db = SQLAlchemy()
 app = Flask(__name__)
@@ -216,14 +214,13 @@ def get_products_w_and_c():
 class Rev(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, unique=False, nullable=False)
-    # description = db.Column(db.String, unique=True, nullable=False)
+    description = db.Column(db.String, unique=True, nullable=False)
     rate = db.Column(db.Integer)
     date = db.Column(db.DateTime, default=datetime.datetime.utcnow)
 
 with app.app_context():
     db.create_all()
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
 
 # ---------------------------------------------
@@ -248,7 +245,7 @@ def write_review():
     if request.method == "POST":
         review = Rev(
             name = request.form['name'],
-            # description = request.form['description'],
+            description = request.form['description'],
             rate = request.form['rate'],
         )
         try:
